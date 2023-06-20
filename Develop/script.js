@@ -11,12 +11,12 @@ var generateBtn = document.querySelector("#generate");
 
 generateBtn.addEventListener("click", writePassword); 
 function writePassword() {
-    var reWritePrompts = prompts(); // either true or false
+    var reWritePrompts = prompts(); 
     var passwordText = document.querySelector("#password");
     
-    if(reWritePrompts) { //if rewrite is true, generatePassword fxn will engage(refer to line 31).
+    if(reWritePrompts) { 
       var passwordSecurity = generatePassword();
-      passwordText.value = passwordSecurity; // changed text value and updated DOM 
+      passwordText.value = passwordSecurity; 
     } else {
       passwordText.value = ""; 
     }
