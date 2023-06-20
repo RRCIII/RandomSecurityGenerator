@@ -32,3 +32,31 @@ function generatePassword() {
   }
   return password;
 }  
+
+function prompts() {
+    characterPool = [];
+  
+    passwordLength = parseInt(prompt("Enter password length (8 - 128 characters.")); 
+     
+      if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
+          alert("Invalid password length. Enter password length between 8 and 128. Please try again.");
+          return false;
+      }
+  
+      if(confirm("would you like special characters in your password?")) {
+        characterPool = characterPool.concat(includeSpecial);
+      }
+    
+      if(confirm("would you like uppercase letters in your password?")) {
+        characterPool = characterPool.concat(includeUppercase);
+      }
+    
+      if(confirm("would you like lowercase letters in your password?")) {
+        characterPool = characterPool.concat(includeLowercase);
+      }
+  
+      if(confirm("would you like numeric values in your password?")) {
+        characterPool = characterPool.concat(includeNumeric);
+      }
+      return true;
+  }
