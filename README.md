@@ -1,6 +1,6 @@
 ## Purpose
 
-As a developer, I want to create random password generator that provides greater security for sensitive data. 
+As a developer, I want to create a random password generator that provides greater security for sensitive data. 
 
 
 ## User Story
