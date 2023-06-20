@@ -6,3 +6,29 @@ var includeLowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "
 var includeUppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]; 
 var includeNumeric = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
 var includeSpecial = ["!" ,"@" ,"#", "$", "%",".", "?","/","|"];
+
+var generateBtn = document.querySelector("#generate");
+
+
+generateBtn.addEventListener("click", writePassword); // when eventListner is clicked, the fxn writePassword will engage with a call from prompts.
+
+function writePassword() {
+    var reWritePrompts = prompts(); // either true or false
+    var passwordText = document.querySelector("#password");
+    
+    if(reWritePrompts) { //if rewrite is true, generatePassword fxn will engage(refer to line 31).
+      var passwordSecurity = generatePassword();
+      passwordText.value = passwordSecurity; // changed text value and updated DOM 
+    } else {
+      passwordText.value = ""; 
+    }
+}    
+
+function generatePassword() {
+  var password = "";
+  for( var i = 0; i < passwordLength; i++) {
+       var randomCatalog = Math.floor(Math.random() * characterPool.length);
+        password = password + characterPool[randomCatalog];
+  }
+  return password;
+}  
